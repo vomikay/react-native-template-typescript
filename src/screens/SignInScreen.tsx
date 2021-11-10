@@ -23,7 +23,7 @@ export const SignInScreen = ({navigation}: Props): JSX.Element => {
       <TextInput style={styles.input} placeholder="Username" />
       <TextInput style={styles.input} placeholder="Password" />
       <TouchableOpacity style={styles.button} onPress={handleSignInButtonPress}>
-        <Text style={styles.buttonText}>Войти</Text>
+        <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
     </View>
   );
