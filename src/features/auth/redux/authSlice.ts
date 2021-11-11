@@ -1,17 +1,18 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
-import {RefreshTokenParams, SignInParams} from 'features/auth/types';
+import {RefreshTokenRequestData, SignInRequestData} from 'features/auth/types';
 import {authRepository} from 'features/auth/repository';
 
 const name = 'auth' as const;
 
 export const signIn = createAsyncThunk(
   `${name}/signIn`,
-  async (params: SignInParams) => authRepository.signIn(params),
+  async (params: SignInRequestData) => authRepository.signIn(params),
 );
 
 export const refreshToken = createAsyncThunk(
   `${name}/refreshToken`,
-  (params: RefreshTokenParams) => authRepository.refreshAccessToken(params),
+  (params: RefreshTokenRequestData) =>
+    authRepository.refreshAccessToken(params),
 );
 
 type State = {

@@ -1,4 +1,4 @@
-export type SignInParams = {
+export type SignInRequestData = {
   username: string;
   password: string;
 };
@@ -8,7 +8,7 @@ export type SignInResponseData = {
   refreshToken: string;
 };
 
-export type RefreshTokenParams = {
+export type RefreshTokenRequestData = {
   refreshToken: string;
 };
 

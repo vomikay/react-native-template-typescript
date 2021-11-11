@@ -1,24 +1,24 @@
 import {client} from 'core/services/api';
 import {
-  RefreshTokenParams,
+  RefreshTokenRequestData,
   RefreshTokenResponseData,
-  SignInParams,
+  SignInRequestData,
   SignInResponseData,
 } from 'features/auth/types';
 
 class AuthRepository {
-  public signIn = async (params: SignInParams) => {
+  public signIn = async (data: SignInRequestData) => {
     const response = await client.post<SignInResponseData>(
       '/auth/signIn',
-      params,
+      data,
     );
     return response.data;
   };
 
-  public refreshAccessToken = async (params: RefreshTokenParams) => {
+  public refreshAccessToken = async (data: RefreshTokenRequestData) => {
     const response = await client.post<RefreshTokenResponseData>(
       '/auth/refresh',
-      params,
+      data,
     );
     return response.data;
   };
