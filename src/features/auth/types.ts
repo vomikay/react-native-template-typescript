@@ -9,7 +9,7 @@ export type SignInResponseData = {
 };
 
 export type RefreshTokenParams = {
-  accessToken: string;
+  refreshToken: string;
 };
 
 export type RefreshTokenResponseData = {

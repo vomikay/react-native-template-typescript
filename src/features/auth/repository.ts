@@ -8,7 +8,10 @@ import {
 
 class AuthRepository {
   public signIn = async (params: SignInParams) => {
-    const response = await client.post<SignInResponseData>('/auth', params);
+    const response = await client.post<SignInResponseData>(
+      '/auth/signIn',
+      params,
+    );
     return response.data;
   };
 
