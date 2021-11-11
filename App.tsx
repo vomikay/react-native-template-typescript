@@ -1,4 +1,5 @@
-import React from 'react';
+import SplashScreen from 'react-native-splash-screen';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {RootStack} from 'navigation/RootStack';
 import {Provider} from 'react-redux';
@@ -9,6 +10,8 @@ import {ToastOutline} from 'core/utils/toast';
 setupAuthInterceptors(store);
 
 const App = (): JSX.Element => {
+  useEffect(() => SplashScreen.hide(), []);
+
   return (
     <>
       <Provider store={store}>
