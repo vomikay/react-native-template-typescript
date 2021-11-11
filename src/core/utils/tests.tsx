@@ -1,7 +1,7 @@
 import React, {ReactElement} from 'react';
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
-import {reducer, RootState, Store} from 'redux/store';
+import {reducer, RootState, Store} from 'reduxStore/store';
 import {
   render as rtlRender,
   RenderOptions as RtlRenderOptions,

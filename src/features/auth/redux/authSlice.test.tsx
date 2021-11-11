@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import Config from 'react-native-config';
 import {rest} from 'msw';
 import {setupServer} from 'msw/node';
 import {
@@ -7,11 +8,11 @@ import {
   signIn,
   signOut,
 } from 'features/auth/redux/authSlice';
-import {RootState, store} from 'redux/store';
+import {RootState, store} from 'reduxStore/store';
 import {render} from 'core/utils/tests';
 
 const server = setupServer(
-  rest.post('http://localhost:3000/api/auth/signIn', (_req, res, ctx) => {
+  rest.post(`${Config.API_URL}/auth/signIn`, (_req, res, ctx) => {
     return res(
       ctx.json({
         accessToken: 'dummy-access-token',
@@ -20,7 +21,7 @@ const server = setupServer(
     );
   }),
 
-  rest.post('http://localhost:3000/api/auth/refresh', (_req, res, ctx) => {
+  rest.post(`${Config.API_URL}/auth/refresh`, (_req, res, ctx) => {
     return res(
       ctx.json({
         accessToken: 'refreshed-dummy-access-token',

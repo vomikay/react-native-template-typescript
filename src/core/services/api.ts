@@ -1,6 +1,7 @@
 import axios from 'axios';
+import Config from 'react-native-config';
 
 export const client = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: Config.API_URL,
   headers: {'Content-Type': 'application/json'},
 });

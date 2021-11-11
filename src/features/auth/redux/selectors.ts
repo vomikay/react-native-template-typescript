@@ -1,4 +1,4 @@
-import {RootState} from 'redux/store';
+import {RootState} from 'reduxStore/store';
 import {createSelector} from 'reselect';
 
 const getAuthState = (state: RootState) => state.auth;

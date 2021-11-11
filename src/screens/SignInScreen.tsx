@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {fValue, spacing} from 'core/utils/ui';
 import {Controller, useForm} from 'react-hook-form';
-import {useAppDispatch} from 'redux/hooks';
+import {useAppDispatch} from 'reduxStore/hooks';
 import {signIn} from 'features/auth/redux/authSlice';
 import {Toast} from 'core/utils/toast';
 

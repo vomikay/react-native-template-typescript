@@ -1,6 +1,6 @@
 import {client} from 'core/services/api';
 import {getAccessToken} from 'features/auth/redux/selectors';
-import {Store} from 'redux/store';
+import {Store} from 'reduxStore/store';
 
 export const setupAuthInterceptors = (store: Store) => {
   const {getState} = store;

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android --variant=debug",
+    "android:release": "react-native run-android --variant=release",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -17,6 +18,7 @@
     "react": "17.0.2",
     "react-hook-form": "^7.19.3",
     "react-native": "0.66.2",
+    "react-native-config": "^1.4.5",
     "react-native-responsive-fontsize": "^0.5.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",

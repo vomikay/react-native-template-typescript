@@ -9,7 +9,7 @@ module.exports = {
         alias: {
           core: './src/core',
           navigation: './src/navigation',
-          redux: './src/redux',
+          reduxStore: './src/reduxStore',
           screens: './src/screens',
         },
       },
