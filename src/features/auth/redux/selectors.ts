@@ -1,14 +1,14 @@
 import {RootState} from 'redux/store';
 import {createSelector} from 'reselect';
 
-const selfSelector = (state: RootState) => state.auth;
+const getAuthState = (state: RootState) => state.auth;
 
 export const getAccessToken = createSelector(
-  selfSelector,
+  getAuthState,
   state => state.accessToken,
 );
 
 export const getRefreshToken = createSelector(
-  selfSelector,
+  getAuthState,
   state => state.refreshToken,
 );
