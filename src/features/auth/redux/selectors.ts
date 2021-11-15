@@ -7,8 +7,3 @@ export const getAccessToken = createSelector(
   getAuthState,
   state => state.accessToken,
 );
-
-export const getRefreshToken = createSelector(
-  getAuthState,
-  state => state.refreshToken,
-);

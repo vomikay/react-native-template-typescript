@@ -2,32 +2,13 @@ import React, {Fragment} from 'react';
 import Config from 'react-native-config';
 import {rest} from 'msw';
 import {setupServer} from 'msw/node';
-import {
-  authReducer,
-  refreshToken,
-  signIn,
-  signOut,
-} from 'features/auth/redux/authSlice';
-import {RootState, store} from 'reduxStore/store';
+import {authReducer, signIn, signOut} from 'features/auth/redux/authSlice';
+import {store} from 'reduxStore/store';
 import {render} from 'core/utils/tests';
 
 const server = setupServer(
-  rest.post(`${Config.API_URL}/auth/signIn`, (_req, res, ctx) => {
-    return res(
-      ctx.json({
-        accessToken: 'dummy-access-token',
-        refreshToken: 'dummy-refresh-token',
-      }),
-    );
-  }),
-
-  rest.post(`${Config.API_URL}/auth/refresh`, (_req, res, ctx) => {
-    return res(
-      ctx.json({
-        accessToken: 'refreshed-dummy-access-token',
-        refreshToken: 'refreshed-dummy-refresh-token',
-      }),
-    );
+  rest.post(`${Config.API_URL}/auth/signIn`, (req, res, ctx) => {
+    return res(ctx.json({accessToken: 'dummy-access-token'}));
   }),
 );
 
@@ -40,51 +21,30 @@ afterAll(() => server.close());
 test('should return the initial state', () => {
   expect(authReducer(undefined, {type: 'unknown'})).toEqual({
     accessToken: null,
-    refreshToken: null,
   });
 });
 
 test('should remove the auth tokens on sing out', () => {
   const previousState: ReturnType<typeof authReducer> = {
     accessToken: 'dummy-access-token',
-    refreshToken: 'dummy-refresh-token',
   };
 
   expect(authReducer(previousState, signOut())).toEqual({
     accessToken: null,
-    refreshToken: null,
   });
 });
 
 test('should return the auth tokens on sign in', async () => {
   render(<Fragment />, {store});
 
-  await store.dispatch(signIn({username: 'username', password: 'password'}));
-
-  expect(store.getState().auth).toEqual({
-    accessToken: 'dummy-access-token',
-    refreshToken: 'dummy-refresh-token',
-  });
-});
-
-test('should return the auth tokens on refresh token', async () => {
-  const preloadedState: RootState = {
-    auth: {
-      accessToken: 'dummy-access-token',
-      refreshToken: 'dummy-refresh-token',
-    },
-  };
-
-  render(<Fragment />, {preloadedState, store});
-
   await store.dispatch(
-    refreshToken({
-      refreshToken: 'dummy-refresh-token',
+    signIn({
+      username: 'username',
+      password: 'password',
     }),
   );
 
   expect(store.getState().auth).toEqual({
-    accessToken: 'refreshed-dummy-access-token',
-    refreshToken: 'refreshed-dummy-refresh-token',
+    accessToken: 'dummy-access-token',
   });
 });
