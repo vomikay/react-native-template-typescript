@@ -11,6 +11,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@notifee/react-native": "^3.0.4",
+    "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/messaging": "^13.0.1",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "@reduxjs/toolkit": "^1.6.2",

@@ -61,3 +61,5 @@ buck-out/
 
 .vscode
 .idea
+/android/**/google-services.json
+/ios/**/GoogleService-Info.plist
