@@ -1,9 +1,11 @@
 import React from 'react';
 import {
+  Keyboard,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import {fValue, spacing} from 'core/utils/ui';
@@ -38,44 +40,46 @@ export const SignInScreen = (): JSX.Element => {
   };
 
   return (
-    <View style={styles.root}>
-      <Controller
-        control={control}
-        defaultValue=""
-        name="username"
-        rules={{required: true}}
-        render={({field: {value, onChange, onBlur}}) => (
-          <TextInput
-            style={styles.input}
-            placeholder="Username"
-            value={value}
-            onBlur={onBlur}
-            onChangeText={onChange}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        defaultValue=""
-        name="password"
-        rules={{required: true}}
-        render={({field: {value, onChange, onBlur}}) => (
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            value={value}
-            onBlur={onBlur}
-            onChangeText={onChange}
-          />
-        )}
-      />
-      <TouchableOpacity
-        style={[styles.button, disabled && styles.disabledButton]}
-        onPress={handleSubmit(onSubmit)}
-        disabled={disabled}>
-        <Text style={styles.buttonText}>Sign In</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.root}>
+        <Controller
+          control={control}
+          defaultValue=""
+          name="username"
+          rules={{required: true}}
+          render={({field: {value, onChange, onBlur}}) => (
+            <TextInput
+              style={styles.input}
+              placeholder="Username"
+              value={value}
+              onBlur={onBlur}
+              onChangeText={onChange}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          defaultValue=""
+          name="password"
+          rules={{required: true}}
+          render={({field: {value, onChange, onBlur}}) => (
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              value={value}
+              onBlur={onBlur}
+              onChangeText={onChange}
+            />
+          )}
+        />
+        <TouchableOpacity
+          style={[styles.button, disabled && styles.disabledButton]}
+          onPress={handleSubmit(onSubmit)}
+          disabled={disabled}>
+          <Text style={styles.buttonText}>Sign In</Text>
+        </TouchableOpacity>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

@@ -63,3 +63,4 @@ buck-out/
 .idea
 /android/**/google-services.json
 /ios/**/GoogleService-Info.plist
+.env
