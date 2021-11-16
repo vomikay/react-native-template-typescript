@@ -1,9 +1,13 @@
+# 🐸 React Native Template TypeScript
+
+> В данный момент Push-уведомления для iOS могут не работать. Если вы столкнулись с данной проблемой попробуйте сами [настроить React Native Firebase](https://rnfirebase.io/).
+
 ## 🏷️ Возможности
 
 - Простая JWT аутентификация
-- Firebase push-уведомления
+- Firebase Push-уведомления
 - Загрузочный экран
-- Production и development конфигурация
+- Production и Development конфигурации
 
 ## 📋 Требования
 
@@ -22,14 +26,18 @@ npx react-native init MyApp --template https://github.com/vomikay/react-native-t
 
 3. [Добавьте учетные данные для Android](https://rnfirebase.io/#generating-android-credentials)
 
-4. [Добавьте учетные данные для IOS](https://rnfirebase.io/#generating-ios-credentials)
+4. [Настройте уведомления для iOS](https://rnfirebase.io/messaging/usage/ios-setup)
 
-5. Запустите приложение
+5. [Добавьте учетные данные для iOS](https://rnfirebase.io/#generating-ios-credentials)
+
+6. Установите зависимости
 
 ```sh
-npm run start
-npm run android [ios]
+yarn install
+cd ios && pod install
 ```
+
+7. Запустите приложение
 
 ```sh
 yarn start
