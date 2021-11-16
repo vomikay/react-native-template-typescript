@@ -5,11 +5,12 @@ import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {RootStack} from 'navigation/RootStack';
 import {Provider} from 'react-redux';
-import {store} from 'reduxStore/store';
+import {persistor, store} from 'reduxStore/store';
 import {setupAuthInterceptors} from 'features/auth/setupAuthInterceptors';
 import {ToastOutline} from 'core/utils/toast';
 import {useRequestPushPermissions} from 'features/push/hooks/useRequestPushPermissions';
 import {useForegroundPushNotifications} from 'features/push/hooks/useForegroundPushNotifications';
+import {PersistGate} from 'redux-persist/integration/react';
 
 // Create the notification channel for Android devices.
 // Don't forget to change the messaging_android_notification_channel_id in the firebase.json.
@@ -30,9 +31,11 @@ const App = (): JSX.Element => {
   return (
     <>
       <Provider store={store}>
-        <NavigationContainer>
-          <RootStack />
-        </NavigationContainer>
+        <PersistGate loading={null} persistor={persistor}>
+          <NavigationContainer>
+            <RootStack />
+          </NavigationContainer>
+        </PersistGate>
       </Provider>
       <ToastOutline />
     </>
