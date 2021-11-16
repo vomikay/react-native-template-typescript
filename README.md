@@ -3,7 +3,7 @@
 - Простая JWT аутентификация
 - Firebase push-уведомления
 - Загрузочный экран
-- Production и develop конфигурация
+- Production и development конфигурация
 
 ## 📋 Требования
 
@@ -15,7 +15,7 @@
 1. Сoздайте проект
 
 ```sh
-npx react-native init MyApp --template https://github.com/vomikay/react-native-template.git
+npx react-native init MyApp --template https://github.com/vomikay/react-native-template-typescript.git
 ```
 
 2. [Создайте новое Firebase приложение](https://console.firebase.google.com/)
