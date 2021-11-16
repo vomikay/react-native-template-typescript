@@ -5,5 +5,4 @@ export type SignInRequestData = {
 
 export type SignInResponseData = {
   accessToken: string;
-  refreshToken: string;
 };

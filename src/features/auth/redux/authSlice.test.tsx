@@ -7,7 +7,7 @@ import {store} from 'reduxStore/store';
 import {render} from 'core/utils/tests';
 
 const server = setupServer(
-  rest.post(`${Config.API_URL}/auth/signIn`, (req, res, ctx) => {
+  rest.post(`${Config.API_URL}/auth/signIn`, (_req, res, ctx) => {
     return res(ctx.json({accessToken: 'dummy-access-token'}));
   }),
 );

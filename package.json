@@ -1,64 +1,64 @@
 {
-    "name": "projectname",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "android": "react-native run-android --variant=debug",
-        "android:release": "react-native run-android --variant=release",
-        "ios": "react-native run-ios --scheme 'Debug'",
-        "ios:release": "react-native run-ios --scheme 'Release'",
-        "start": "react-native start",
-        "test": "jest",
-        "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-    },
-    "dependencies": {
-        "@notifee/react-native": "^3.0.4",
-        "@react-native-firebase/app": "^13.0.1",
-        "@react-native-firebase/messaging": "^13.0.1",
-        "@react-navigation/native": "^6.0.6",
-        "@react-navigation/native-stack": "^6.2.5",
-        "@reduxjs/toolkit": "^1.6.2",
-        "axios": "^0.24.0",
-        "react": "17.0.2",
-        "react-hook-form": "^7.19.3",
-        "react-native": "0.66.2",
-        "react-native-config": "^1.4.5",
-        "react-native-responsive-fontsize": "^0.5.1",
-        "react-native-safe-area-context": "^3.3.2",
-        "react-native-screens": "^3.9.0",
-        "react-native-splash-screen": "^3.2.0",
-        "react-native-toast-message": "^2.0.1",
-        "react-redux": "^7.2.6"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.12.9",
-        "@babel/runtime": "^7.12.5",
-        "@react-native-community/eslint-config": "^2.0.0",
-        "@testing-library/react-native": "^8.0.0",
-        "@types/jest": "^26.0.23",
-        "@types/react-native": "^0.65.0",
-        "@types/react-test-renderer": "^17.0.1",
-        "babel-jest": "^26.6.3",
-        "babel-plugin-module-resolver": "^4.1.0",
-        "eslint": "^7.14.0",
-        "jest": "^26.6.3",
-        "metro-react-native-babel-preset": "^0.66.2",
-        "msw": "^0.35.0",
-        "react-test-renderer": "17.0.2",
-        "typescript": "^3.8.3"
-    },
-    "resolutions": {
-        "@types/react": "^17"
-    },
-    "jest": {
-        "preset": "react-native",
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js",
-            "jsx",
-            "json",
-            "node"
-        ]
-    }
+  "name": "projectname",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android --variant=debug",
+    "android:release": "react-native run-android --variant=release",
+    "ios": "react-native run-ios --scheme 'Debug'",
+    "ios:release": "react-native run-ios --scheme 'Release'",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "@notifee/react-native": "^3.0.4",
+    "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/messaging": "^13.0.1",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
+    "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.24.0",
+    "react": "17.0.2",
+    "react-hook-form": "^7.19.3",
+    "react-native": "0.66.2",
+    "react-native-config": "^1.4.5",
+    "react-native-responsive-fontsize": "^0.5.1",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.9.0",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-toast-message": "^2.0.1",
+    "react-redux": "^7.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/react-native": "^8.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/react-native": "^0.65.0",
+    "@types/react-test-renderer": "^17.0.1",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "msw": "^0.35.0",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^3.8.3"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
 }
