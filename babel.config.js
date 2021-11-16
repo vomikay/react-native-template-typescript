@@ -7,6 +7,7 @@ module.exports = {
         root: ['./src'],
         extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
         alias: {
+          assets: './src/assets',
           core: './src/core',
           navigation: './src/navigation',
           reduxStore: './src/reduxStore',
