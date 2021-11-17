@@ -64,13 +64,13 @@ yarn android [ios]
 
 ### Как опубликовать приложение в Apple App Store?
 
-Прежде чем опубликовать приложение в Apple App Store, обязательно тщательно его протестируйте. Установите приложение на устройство, используя команду `yarn android:release` или команду Build в Xcode со схемой конфигурации Release. Далее следуйте следующей [инструкции](https://medium.com/timeless/adding-react-native-app-to-app-store-connect-c4d45571df0d).
+Прежде чем опубликовать приложение в Apple App Store, обязательно тщательно его протестируйте. Установите приложение на устройство, используя команду `yarn ios:release` или команду Build в Xcode со схемой конфигурации Release. Далее следуйте следующей [инструкции](https://medium.com/timeless/adding-react-native-app-to-app-store-connect-c4d45571df0d).
 
 ### Как изменить иконку Push-уведомлений?
 
 > Инонка Push-уведомлений для платформы iOS должна соответствовать иконке, которая испльзуется для приложения. Соответственно, для того, чтобы изменить иконку Push-уведомлений, нужно заменить иконку самого приложения. [Human Interface Guidlines](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/).
 
-Для того чтобы изменить иконку Push-уведомлений на Android, следуйте [инструкции](https://notifee.app/react-native/docs/android/appearance#small-icons) библиотеки Notify. Затем необходимо добавить иконку для RNFirebase:
+Для того чтобы изменить иконку Push-уведомлений на Android, следуйте [инструкции](https://notifee.app/react-native/docs/android/appearance#small-icons) библиотеки Notify. Затем необходимо добавить иконку для React Native Firebase:
 
 ```xml
 <!-- android/app/src/main/AndroidManifest.xml -->
@@ -86,7 +86,7 @@ yarn android [ios]
 </manifest>
 ```
 
-На Android в любых сообщениях, отображающих уведомление, не используется цвет для окрашивания содержимого. Чтобы задать собственный цвет оттенка, измените следующие файлы:
+На Android в любых сообщениях, отображающих уведомления, не используется цвет для окрашивания содержимого. Чтобы задать собственный цвет оттенка, измените следующие файлы:
 
 ```xml
 <!-- android/app/src/main/res/values/colors.xml -->
